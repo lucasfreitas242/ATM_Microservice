@@ -11,11 +11,9 @@ module.exports = {
         deposit: (_, {account_number, deposit}) => {
             atm.findOneAndUpdate(
                 {"account_number": account_number},
-                {"$set": {account_balance: account_balance + deposit}}
+                {"$inc": {account_balance: deposit}}
             ).exec((err, res) => {
                 console.log('test', res)
-                if(err) reject(err)
-                else resolve(res)
             })
         }
     }
