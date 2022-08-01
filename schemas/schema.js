@@ -2,18 +2,18 @@ module.exports = (`
 type Account {
     id: ID!
     account_number: String!
-    account_balance: Number!
-    deposit: Number
-    withdraw: Number
+    account_balance: Int!
+    deposit: Int
+    withdraw: Int
 }
 
 type Query {
-    getBalance(account_number: String!): Account
+    getBalance(id: ID!): Account
 }
 
 type Mutation {
-    createAccount(account_number: String!, account_balance: Number!): Account
-    deposit(account_number: String!, deposit!): Account
-    withdraw(account_number: String!, withdraw!): Account
+    createAccount(account_number: String!, account_balance: Int!): Account
+    deposit(account_number: String!, deposit: Int!): Account
+    withdraw(account_number: String!, withdraw: Int!): Account
 } 
 `);

@@ -5,4 +5,4 @@ const ATMSchema = new mongoose.Schema({
     account_balance: Number
 });
 
-module.exports = mongoose.model("User", ATMSchema);
+module.exports = mongoose.model("Accounts", ATMSchema);
