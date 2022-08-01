@@ -13,7 +13,16 @@ module.exports = {
                 {"account_number": account_number},
                 {"$inc": {account_balance: deposit}}
             ).exec((err, res) => {
-                console.log('test', res)
+                console.log('account', res)
+            })
+        },
+
+        withdraw: (_, {account_number, withdraw}) => {
+            atm.findOneAndUpdate(
+                {"account_number": account_number},
+                {"$inc": {account_balance: -withdraw}}
+            ).exec((err, res) => {
+                console.log('account', res)
             })
         }
     }
